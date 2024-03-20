@@ -1,0 +1,23 @@
+.rating {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .rating span {
+    font-size: 2em;
+    user-select: none;
+  }
+  .rating span:hover,
+  .rating span:hover ~ span {
+    color: gold;
+  }
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 10px;
+  }
+  button {
+    display: block;
+    width: 100%;
+  }
+  
