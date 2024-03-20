@@ -1,0 +1,8 @@
+
+<section class="listing">
+    <img class="listing-photo" [src]="doctor.image" alt="Exterior photo of {{doctor.name}}">
+    <h2 class="listing-heading">{{ doctor.name}}</h2>
+    <p class="listing-location">{{ doctor.specialization}}, {{doctor.rating }}</p>
+    <p class="listing-location">{{ doctor.description }}</p>
+    <a [routerLink]="['/docdetails', doctor.id]">View Details</a>
+  </section>
