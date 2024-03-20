@@ -9,5 +9,5 @@ export const routes: Routes = [
   {path: '', component: LoginComponent},
   {path:'patient/dashboard',component:PatientDashboardComponent},
   {path: 'register', component: PatientRegistrationComponent},
-  {path: 'docdetail', component: DocdetailsComponent}
+  {path: 'patient/dashboard/docdetail/:id', component: DocdetailsComponent}
 ];

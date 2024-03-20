@@ -25,7 +25,7 @@ export class PatientService {
   image: this.baseUrl + 'doctor.jpg'
   
 },{
-  id: 1,
+  id: 3,
   name: 'Dr. John Smith',
   specialization: 'General Doctor',
   rating: 4.5,

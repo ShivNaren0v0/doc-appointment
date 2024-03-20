@@ -4,5 +4,5 @@
     <h2 class="listing-heading">{{ doctor.name}}</h2>
     <p class="listing-location">{{ doctor.specialization}}, {{doctor.rating }}</p>
     <p class="listing-location">{{ doctor.description }}</p>
-    <a [routerLink]="['/docdetails', doctor.id]">View Details</a>
+    <a [routerLink]="['patient/dashboard/docdetail/', doctor.id]">View Details</a>
   </section>
