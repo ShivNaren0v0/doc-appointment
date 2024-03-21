@@ -14,7 +14,7 @@ export const routes: Routes = [
         { path: 'patient-dashboard', component: PatientDashboardComponent },
         { path: 'patient-registration', component: PatientRegistrationComponent },
         { path: 'docdetails/:id', component: DocdetailsComponent },
-        {path: 'log-out', redirectTo: '/', pathMatch: 'full'}
+        {path: 'log-out', redirectTo: '/', pathMatch: 'full'},
         {path: 'appointments', component: ViewAppointmentsComponent}
     ]},
 
