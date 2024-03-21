@@ -6,6 +6,7 @@ import { DocdetailsComponent } from './components/docdetails/docdetails.componen
 import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ViewAppointmentsComponent } from './components/view-appointments/view-appointments.component';
 export const routes: Routes = [
     {path: '', component: LoginComponent},
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
         { path: 'patient-registration', component: PatientRegistrationComponent },
         { path: 'docdetails/:id', component: DocdetailsComponent },
         {path: 'log-out', redirectTo: '/', pathMatch: 'full'}
+        {path: 'appointments', component: ViewAppointmentsComponent}
     ]},
 
     {path: '**', component: NotfoundComponent}
