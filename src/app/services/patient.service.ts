@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Doctor } from '../interfaces/doctor';
+import { Appointment } from '../interfaces/appointment';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,6 +35,11 @@ export class PatientService {
   
 }]
 
+appointmentsList: Appointment[] = [
+  {id: 1, date: '2023-05-01', time: '10:00', status: true, description: 'Headache'},
+  {id: 2, date: '2023-06-01', time: '15:00', status: false, description: 'Cancer'},
+  {id: 3, date: '2023-09-01', time: '18:00', status: true, description: 'Some other issue'}
+]
 getAllDoctors(): Doctor[] {
   return this.doctorList;
 }
@@ -46,5 +52,13 @@ submitAppointmentRequest(name: string, date: string, time: string, email: string
     console.log(`Appointment request received for ${name} on ${date} at ${time} with email ${email}, description: ${description}`);
   
 
+}
+
+getAllAppointments(): Appointment[] {
+  return this.appointmentsList;
+}
+
+getAppointmentById(id: number): Appointment | undefined{
+  return this.appointmentsList.find(appointment => appointment.id === id);
 }
 }
