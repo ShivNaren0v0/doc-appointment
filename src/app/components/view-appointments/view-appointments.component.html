@@ -1,1 +1,10 @@
-<p>view-appointments works!</p>
+<section>
+    <form>
+      <input type="date" placeholder="Filter by date" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    </form>
+  </section>
+
+<section class="results">
+    <app-appointmentwidget *ngFor="let appointment of filteredAppointmentList" [appointment]="appointment"></app-appointmentwidget>
+</section>
