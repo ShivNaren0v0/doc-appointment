@@ -1,8 +1,8 @@
 
 <section class="listing">
     <img class="listing-photo" src="assets/appointment.png" alt="Illustrative Image of Appointment">
-    <h2 class="listing-heading">{{ appointment.time}}</h2>
-    <p class="listing-location">{{ appointment.date}}</p>
+    <h2 class="listing-heading">{{ appointment.date}}</h2>
+    <p class="listing-location">{{ appointment.time}}</p>
     <p class="listing-location" *ngIf="appointment.status == true">Status: Booked</p><p class="listing-location" *ngIf="appointment.status == false">Status: Not Booked</p>
     <p class="listing-location">{{ appointment.description }}</p>
   </section>

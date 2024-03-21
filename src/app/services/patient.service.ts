@@ -36,9 +36,9 @@ export class PatientService {
 }]
 
 appointmentsList: Appointment[] = [
-  {id: 1, date: '2023-05-01', time: '10:00', status: true, description: 'Headache'},
-  {id: 2, date: '2023-06-01', time: '15:00', status: false, description: 'Cancer'},
-  {id: 3, date: '2023-09-01', time: '18:00', status: true, description: 'Some other issue'}
+  {id: 1, date: new Date(Date.parse('01-05-2023')), time: '10:00', status: true, description: 'Headache'},
+  {id: 2, date: new Date(Date.parse('01-06-2023')), time: '15:00', status: false, description: 'Cancer'},
+  {id: 3, date: new Date(Date.parse('01-09-2023')), time: '18:00', status: true, description: 'Some other issue'}
 ]
 getAllDoctors(): Doctor[] {
   return this.doctorList;
