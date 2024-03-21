@@ -1,0 +1,24 @@
+<main>
+    <nav>
+      <ul>
+        <li>
+      <a [routerLink]="['/patient/patient-dashboard']">
+        Doctors 
+      </a>
+        </li>
+        <li>
+      <a [routerLink]="['/patient/appointments']">
+        Appointments
+      </a>
+        </li>
+        <li>
+      <a [routerLink]="['/patient/log-out']">
+        Log out
+      </a>
+        </li>
+      </ul>
+    </nav>
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
