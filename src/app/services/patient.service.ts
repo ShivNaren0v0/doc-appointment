@@ -61,4 +61,8 @@ getAllAppointments(): Appointment[] {
 getAppointmentById(id: number): Appointment | undefined{
   return this.appointmentsList.find(appointment => appointment.id === id);
 }
+
+login(email: string, password: string): boolean {
+  return true;
+}
 }

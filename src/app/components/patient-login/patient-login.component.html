@@ -1,0 +1,11 @@
+<article>
+    <section class="hero-section">
+      <form [formGroup]="applyForm" (submit)="submitApplication()">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" required>
+        <label for="description">Password</label>
+        <input id="description" type="password" formControlName="description" required>
+        <button type="submit" class="primary">Login</button>
+      </form>
+    </section>
+  </article>
