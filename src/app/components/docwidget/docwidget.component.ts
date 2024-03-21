@@ -1,6 +1,7 @@
 import { Component,Input } from '@angular/core';
 import { Doctor } from '../../interfaces/doctor';
 import { RouterModule } from '@angular/router';
+import { CommonModule, NgIf } from '@angular/common';
 @Component({
   selector: 'app-docwidget',
   standalone: true,
