@@ -6,9 +6,13 @@ import { DocdetailsComponent } from './components/docdetails/docdetails.componen
 import { PatientDashboardComponent } from './components/patient-dashboard/patient-dashboard.component';
 import { PatientComponent } from './components/patient/patient.component';
 export const routes: Routes = [
+    {path: '', component: LoginComponent},
+
     { path: 'patient', component: PatientComponent, children: [
         { path: 'patient-dashboard', component: PatientDashboardComponent },
         { path: 'patient-registration', component: PatientRegistrationComponent },
-        { path: 'docdetails/:id', component: DocdetailsComponent }
+        { path: 'docdetails/:id', component: DocdetailsComponent },
+        {path: 'log-out', redirectTo: '/', pathMatch: 'full'}
     ]},
+
 ];
