@@ -56,13 +56,10 @@ submitAppointmentRequest(name: string, date: string, time: string, email: string
 
 }
 
-getAllAppointments(): Observable<any> {
-  return this.httpClient.get('http://localhost:8090/patient/get_appointments/1');
+getAllAppointments(id: number): Observable<any> {
+  return this.httpClient.get('http://localhost:8090/patient/get_appointments/'+id);
 }
 
-// getAppointmentById(id: number): Appointment | undefined{
-//   return this.appointmentsList.find(appointment => appointment.id === id);
-// }
 
 login(email: string, password: string): boolean {
   return true;

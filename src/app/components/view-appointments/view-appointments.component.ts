@@ -18,7 +18,7 @@ export class ViewAppointmentsComponent {
   patientService = inject(PatientService);
 
   constructor() {
-    this.patientService.getAllAppointments().subscribe(
+    this.patientService.getAllAppointments(1).subscribe(
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;
@@ -32,14 +32,31 @@ export class ViewAppointmentsComponent {
   }
 
   filterResults(date: string) {
-    let d: Date = new Date(date);
-    if (!d.getTime()) { // Check if the date is valid
-      console.log("Date not recognized");
-      this.filteredAppointmentList = this.appointmentList;
-    } else {
-      this.filteredAppointmentList = this.appointmentList.filter(
-        appointment => appointment.date === d.toDateString()
-      );
+    try {
+        // Parse the input date string
+        const inputDate = new Date(date);
+        if (isNaN(inputDate.getTime())) {
+            console.log("Date not recognized");
+            this.filteredAppointmentList = this.appointmentList;
+        } else {
+            // Filter appointments based on the input date
+            this.filteredAppointmentList = this.appointmentList.filter(
+                appointment => {
+                    if (appointment.date) {
+                        const appointmentDate = new Date(appointment.date);
+                        return (
+                            appointmentDate.getDate() === inputDate.getDate() &&
+                            appointmentDate.getMonth() === inputDate.getMonth() &&
+                            appointmentDate.getFullYear() === inputDate.getFullYear()
+                        );
+                    }
+                    return false;
+                }
+            );
+        }
+    } catch (error) {
+        console.error("Error filtering appointments:", error);
+        this.filteredAppointmentList = this.appointmentList;
     }
-  }
+}
 }
