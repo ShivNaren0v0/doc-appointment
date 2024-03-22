@@ -22,7 +22,6 @@ export class ViewAppointmentsComponent {
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;
-        console.log(this.appointmentList);
       }
     )
   }

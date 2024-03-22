@@ -18,7 +18,10 @@ export class PatientDashboardComponent {
   patientService = inject(PatientService);
   constructor() {
     this.patientService.getAllDoctors().subscribe(
-      (data) => this.doctorList = data
+      (data) =>{ 
+        this.doctorList = data;
+        this.filteredDoctorList = data;
+      }
     );
     this.filteredDoctorList = this.doctorList;
   }
