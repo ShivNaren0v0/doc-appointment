@@ -14,7 +14,7 @@ import { PatientService } from '../../services/patient.service';
 export class DocdetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   patientService = inject(PatientService);
-  doctor: Doctor | undefined;
+  doctor: Doctor = {};
   doctorId = -1;
   applyForm = new FormGroup({
     name: new FormControl(null),
@@ -25,7 +25,10 @@ export class DocdetailsComponent {
   });
   constructor() {
       this.doctorId = Number(this.route.snapshot.params['id']);
-      this.doctor = this.patientService.getDoctorsById(this.doctorId);
+      this.patientService.getDoctorsById(this.doctorId).subscribe(  
+        (data) => this.doctor = data
+        
+      );
   }
 
   submitApplication() {

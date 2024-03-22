@@ -1,11 +1,10 @@
 <article>
-    <img class="listing-photo" [src]="doctor?.image"
-      alt="Photo of {{doctor?.name}}"/>
+    <img class="listing-photo" src="assets/{{doctor.name}}.jpg"
+      alt="Photo of {{doctor.name}}"/>
     <section class="listing-description">
-      <h2 class="listing-heading">{{doctor?.name}}</h2>
-      <p class="listing-location">Specialization: {{doctor?.specialization}}</p>
-      <p class="listing-location">Rating: {{doctor?.rating}}</p>
-      <p class="listing-location">{{doctor?.description}}</p>
+      <h2 class="listing-heading">{{doctor.name}}</h2>
+      <p class="listing-location">Specialization: {{doctor.spec}}</p>
+      <p class="listing-location">Rating: {{doctor.rating}}</p>
     </section>
     <section class="listing-apply">
       <h2 class="section-heading">Request for an appointment here</h2>

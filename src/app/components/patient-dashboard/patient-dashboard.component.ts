@@ -17,19 +17,22 @@ export class PatientDashboardComponent {
   filteredDoctorList: Doctor[] = [];
   patientService = inject(PatientService);
   constructor() {
-    this.doctorList = this.patientService.getAllDoctors();
+    this.patientService.getAllDoctors().subscribe(
+      (data) => this.doctorList = data
+    );
     this.filteredDoctorList = this.doctorList;
   }
   filterResults(text: string) {
     if (!text) {
-      this.filteredDoctorList = this.doctorList;
-      return;
+        this.filteredDoctorList = this.doctorList;
+        return;
     }
-  
+
     this.filteredDoctorList = this.doctorList.filter(
-      doctor => doctor?.specialization.toLowerCase().includes(text.toLowerCase())
+        doctor => doctor && doctor.spec && doctor.spec.toLowerCase().includes(text.toLowerCase())
     );
-  }
+}
+
   
 
 

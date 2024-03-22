@@ -23,10 +23,6 @@ export class ViewAppointmentsComponent {
         this.appointmentList = data;
         this.filteredAppointmentList = data;
         console.log(this.appointmentList);
-      },
-      (err)=>{console.log(err);},
-      ()=>{
-        console.log("Completed");
       }
     )
   }
