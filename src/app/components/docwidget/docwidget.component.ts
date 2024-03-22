@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-import { Doctor } from '../../interfaces/doctor';
+import { Doctor } from '../../models/doctor';
 import { RouterModule } from '@angular/router';
 import { CommonModule, NgIf } from '@angular/common';
 @Component({

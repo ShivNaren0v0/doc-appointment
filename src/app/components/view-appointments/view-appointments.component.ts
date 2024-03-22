@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { AppointmentwidgetComponent } from '../appointmentwidget/appointmentwidget.component';
 import { CommonModule } from '@angular/common';
-import { Appointment } from '../../interfaces/appointment';
+import { Appointment } from '../../models/appointment';
 import { PatientService } from '../../services/patient.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-view-appointments',
@@ -17,8 +18,17 @@ export class ViewAppointmentsComponent {
   patientService = inject(PatientService);
 
   constructor() {
-    this.appointmentList = this.patientService.getAllAppointments();
-    this.filteredAppointmentList = this.appointmentList;
+    this.patientService.getAllAppointments().subscribe(
+      (data)=>{
+        this.appointmentList = data;
+        this.filteredAppointmentList = data;
+        console.log(this.appointmentList);
+      },
+      (err)=>{console.log(err);},
+      ()=>{
+        console.log("Completed");
+      }
+    )
   }
 
   filterResults(date: string) {
@@ -28,7 +38,7 @@ export class ViewAppointmentsComponent {
       this.filteredAppointmentList = this.appointmentList;
     } else {
       this.filteredAppointmentList = this.appointmentList.filter(
-        appointment => new Date(appointment.date).toDateString() === d.toDateString()
+        appointment => appointment.date === d.toDateString()
       );
     }
   }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Appointment } from '../../interfaces/appointment';
+import { Appointment } from '../../models/appointment';
 import { CommonModule, NgIf } from '@angular/common';
 import { DatePipe } from '@angular/common';
 @Component({

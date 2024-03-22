@@ -22,5 +22,6 @@ export const routes: Routes = [
         {path: 'login',component: PatientLoginComponent}
     ]},
 
+    
     {path: '**', component: NotfoundComponent}
     ];

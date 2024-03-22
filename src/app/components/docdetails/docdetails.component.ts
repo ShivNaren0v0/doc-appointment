@@ -1,6 +1,6 @@
 import { Component,inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Doctor } from '../../interfaces/doctor';
+import { Doctor } from '../../models/doctor';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PatientService } from '../../services/patient.service';

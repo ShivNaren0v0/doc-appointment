@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Doctor } from '../interfaces/doctor';
-import { Appointment } from '../interfaces/appointment';
+import { Doctor } from '../models/doctor';
+import { Appointment } from '../models/appointment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
   readonly baseUrl = 'assets/';
   doctorList: Doctor[] = [{
     id: 1,
@@ -35,11 +37,11 @@ export class PatientService {
   
 }]
 
-appointmentsList: Appointment[] = [
-  {id: 1, date: new Date(Date.parse('01-05-2023')), time: '10:00', status: true, description: 'Headache'},
-  {id: 2, date: new Date(Date.parse('01-06-2023')), time: '15:00', status: false, description: 'Cancer'},
-  {id: 3, date: new Date(Date.parse('01-09-2023')), time: '18:00', status: true, description: 'Some other issue'}
-]
+// appointmentsList: Appointment[] = [
+//   {id: 1, date: new Date(Date.parse('01-05-2023')), time: '10:00', status: true, description: 'Headache'},
+//   {id: 2, date: new Date(Date.parse('01-06-2023')), time: '15:00', status: false, description: 'Cancer'},
+//   {id: 3, date: new Date(Date.parse('01-09-2023')), time: '18:00', status: true, description: 'Some other issue'}
+// ]
 getAllDoctors(): Doctor[] {
   return this.doctorList;
 }
@@ -54,13 +56,13 @@ submitAppointmentRequest(name: string, date: string, time: string, email: string
 
 }
 
-getAllAppointments(): Appointment[] {
-  return this.appointmentsList;
+getAllAppointments(): Observable<any> {
+  return this.httpClient.get('http://localhost:8090/patient/get_appointments/1');
 }
 
-getAppointmentById(id: number): Appointment | undefined{
-  return this.appointmentsList.find(appointment => appointment.id === id);
-}
+// getAppointmentById(id: number): Appointment | undefined{
+//   return this.appointmentsList.find(appointment => appointment.id === id);
+// }
 
 login(email: string, password: string): boolean {
   return true;

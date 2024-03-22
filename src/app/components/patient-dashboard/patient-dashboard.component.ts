@@ -1,7 +1,7 @@
 import { Component,inject } from '@angular/core';
 import { DocwidgetComponent } from '../docwidget/docwidget.component';
 import { CommonModule } from '@angular/common';
-import { Doctor } from '../../interfaces/doctor';
+import { Doctor } from '../../models/doctor';
 import { PatientService } from '../../services/patient.service';
 @Component({
   selector: 'app-patient-dashboard',
