@@ -6,5 +6,6 @@
   </section>
 
 <section class="results">
+  <p *ngIf="filteredAppointmentList.length == 0">No appointments found</p>
     <app-appointmentwidget *ngFor="let appointment of filteredAppointmentList" [appointment]="appointment"></app-appointmentwidget>
 </section>

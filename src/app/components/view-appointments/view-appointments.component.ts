@@ -18,7 +18,7 @@ export class ViewAppointmentsComponent {
   patientService = inject(PatientService);
 
   constructor() {
-    this.patientService.getAllAppointments(1).subscribe(
+    this.patientService.getAllAppointments(2).subscribe(
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;

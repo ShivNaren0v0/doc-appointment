@@ -11,20 +11,16 @@
       
       <p> Fill your details and we will get back to you shortly</p>
       <br>
-      <form [formGroup]="applyForm" (submit)="submitApplication()">
-        <label for="name">Name</label>
-        <input id="name" type="text" formControlName="name" required="true">
+      <form>
 
         <label for="date">Date of Appointment (DD-MM-YYYY)</label>
-        <input id="date" type="date" formControlName="date" required>
+        <input id="date" type="date" [(ngModel)]="this.appointment.date" [ngModelOptions]="{standalone: true}">
 
-        <label for="time">Time of appointment</label>
-        <input id="time" type="time" formControlName="time" required>
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" required>
+        <label for="timing">Time of appointment</label>
+        <input id="timing" type="time" value="00:00:00" [(ngModel)]="this.appointment.timing" [ngModelOptions]="{standalone: true}">
         <label for="description">Description of Symptoms</label>
-        <input id="description" type="text" formControlName="description" required>
-        <button type="submit" class="primary">Request Appointment</button>
+        <input id="description" type="text" [(ngModel)]="this.appointment.description" [ngModelOptions]="{standalone: true}">
+        <button (click)="submitRequest()" class="primary" >Request Appointment</button>
       </form>
     </section>
   </article>

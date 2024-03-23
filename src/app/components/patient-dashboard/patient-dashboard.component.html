@@ -6,5 +6,6 @@
   </section>
 
 <section class="results">
+  <p *ngIf="filteredDoctorList.length === 0">No doctors found!</p>
     <app-docwidget *ngFor="let doctor of filteredDoctorList" [doctor]="doctor"></app-docwidget>
 </section>

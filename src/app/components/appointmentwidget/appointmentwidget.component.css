@@ -29,5 +29,31 @@
     margin-left: 5px;
   }
   
-  
-  
+
+/* Green box for "Status: Booked" */
+.booked {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+
+  background-color: green;
+  color: white;
+}
+.not-booked {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 10px;
+
+  background-color: red;
+  color: white;
+}
+
+
+.pay:hover{
+   background-color:rgb(113, 165, 36);
+   color: black;
+}

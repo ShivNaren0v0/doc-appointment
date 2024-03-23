@@ -19,14 +19,14 @@ getDoctorsById(id: number): Observable<any>{
   return this.httpClient.get('http://localhost:8090/Doctor/'+id)
 }
 
-submitAppointmentRequest(name: string, date: string, time: string, email: string, description: string) {
+submitAppointmentRequest(appointment:Appointment): Observable<any> {
+  console.log(appointment);
+  return this.httpClient.post('http://localhost:8090/appointment', appointment);                                                  
   
-    console.log(`Appointment request received for ${name} on ${date} at ${time} with email ${email}, description: ${description}`);
-  
-
 }
 
 getAllAppointments(id: number): Observable<any> {
+
   return this.httpClient.get('http://localhost:8090/patient/get_appointments/'+id);
 }
 

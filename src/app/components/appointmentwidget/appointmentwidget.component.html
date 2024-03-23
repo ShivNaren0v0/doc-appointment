@@ -1,8 +1,9 @@
-
 <section class="listing">
-    <img class="listing-photo" src="assets/appointment.png" alt="Illustrative Image of Appointment">
-    <h2 class="listing-heading">{{ appointment.date | date: 'dd-MMMM-yyyy' }}</h2>
-    <p class="listing-location">{{ appointment.timing}}</p>
-    <p class="listing-location" *ngIf="appointment.status == true">Status: Booked</p><p class="listing-location" *ngIf="appointment.status == false">Status: Not Booked</p>
-    <p class="listing-location">{{ appointment.description }}</p>
-  </section>
+  <img class="listing-photo" src="assets/appointment.png" alt="Illustrative Image of Appointment">
+  <h2 class="listing-heading">{{ appointment.date | date: 'dd-MMMM-yyyy' }}</h2>
+  <p class="listing-location">Timing: {{ appointment.timing}}</p>
+  <button class="booked" *ngIf="appointment.status == true">Status: Booked</button>
+  <button class="not-booked" *ngIf="appointment.status == false">Status: Not Booked</button>
+  <p class="listing-location">{{ appointment.description }}</p>
+  <button type="button" class="primary pay" *ngIf="appointment.status==false">Perform Payment</button>
+</section>
