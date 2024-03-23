@@ -3,6 +3,7 @@ import { Doctor } from '../models/doctor';
 import { Appointment } from '../models/appointment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Login } from '../interface/login';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,7 +32,7 @@ getAllAppointments(id: number): Observable<any> {
 }
 
 
-login(email: string, password: string): boolean {
-  return true;
+login(login:Login ): Observable<any> {
+  return this.httpClient.post('http://localhost:8090/patient/login', login);
 }
 }
