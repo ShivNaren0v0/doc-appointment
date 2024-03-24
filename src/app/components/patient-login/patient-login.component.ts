@@ -1,28 +1,34 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { PatientService } from '../../services/patient.service';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Login } from '../../interface/login';
+import { Component,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { patlog } from '../../models/patlog.models';
+import { PatauthService } from '../../services/patauth.service';
 @Component({
   selector: 'app-patient-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [FormsModule,HttpClientModule],
+  providers:[PatauthService],
   templateUrl: './patient-login.component.html',
   styleUrl: './patient-login.component.css'
 })
-export class PatientLoginComponent {route: ActivatedRoute = inject(ActivatedRoute);
-  patientService = inject(PatientService);
-  login:Login = {email: '', password: ''};
-  constructor() {
+export class PatientLoginComponent  implements OnInit{
+  logcred: patlog=new patlog();
+  constructor(private _auth:PatauthService,private _router:Router){}
+  ngOnInit(){
   }
-
-  submitApplication() {
-    this.patientService.login(this.login).subscribe(
-      (data) => console.log(data)
+  loginPatient():void {
+    this._auth.loginPat(this.logcred).subscribe(
+      (response) => {
+        console.log(response);
+        localStorage.setItem('token',response.patientId);
+        this._router.navigate(['/patient']);
+      },
+      (error) => {
+        console.error(error);
+        alert('Error login patient');
+      }
     );
   }
-
 
 }

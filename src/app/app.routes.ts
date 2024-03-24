@@ -13,18 +13,18 @@ import { DoctorNavbarComponent } from './components/doctor-navbar/doctor-navbar.
 import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
 import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
-
+import { authGuard } from './guard/auth.guard';
 import path from 'path';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
 
     { path: 'patient', component: PatientComponent, children: [
         { path: '', component: PatientHomeComponent },
-        { path: 'patient-dashboard', component: PatientDashboardComponent },
+        { path: 'patient-dashboard', component: PatientDashboardComponent,canActivate:[authGuard] },
         { path: 'patient-registration', component: PatientRegistrationComponent },
-        { path: 'docdetails/:id', component: DocdetailsComponent },
+        { path: 'docdetails/:id', component: DocdetailsComponent ,canActivate:[authGuard]},
         {path: 'log-out', redirectTo: 'login', pathMatch: 'full'},
-        {path: 'appointments', component: ViewAppointmentsComponent},
+        {path: 'appointments', component: ViewAppointmentsComponent,canActivate:[authGuard]},
         {path: 'login',component: PatientLoginComponent}
     ]},
     {path:'doctor',component:DoctorNavbarComponent,children:[

@@ -17,7 +17,17 @@
       </a>
         </li>
         <li>
-      <a [routerLink]="['/patient/log-out']">
+          <a *ngIf="!_authService.loggedIn()" [routerLink]="['/patient/patient-registration']">
+            Register
+          </a>
+            </li>
+            <li>
+              <a *ngIf="!_authService.loggedIn()" [routerLink]="['/patient/login']">
+                LogIn
+              </a>
+                </li>
+        <li>
+      <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">
         Log out
       </a>
         </li>
