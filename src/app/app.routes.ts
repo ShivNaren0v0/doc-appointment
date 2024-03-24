@@ -9,6 +9,12 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ViewAppointmentsComponent } from './components/view-appointments/view-appointments.component';
 import { PatientLoginComponent } from './components/patient-login/patient-login.component';
 import { PatientHomeComponent } from './components/patient-home/patient-home.component';
+import { DoctorNavbarComponent } from './components/doctor-navbar/doctor-navbar.component';
+import { DoctorHomeComponent } from './components/doctor-home/doctor-home.component';
+import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
+import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
+
+import path from 'path';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
 
@@ -21,7 +27,13 @@ export const routes: Routes = [
         {path: 'appointments', component: ViewAppointmentsComponent},
         {path: 'login',component: PatientLoginComponent}
     ]},
+    {path:'doctor',component:DoctorNavbarComponent,children:[
+        {path:'',component:DoctorHomeComponent},
+        {path:'doctor-appointment',component:DoctorAppointmentsComponent},
+        {path:'doctor-login',component:DoctorLoginComponent},
+        {path:'doctor-logout', redirectTo: 'doctor-login', pathMatch: 'full'},
+        {path:'doctor-login',component:DoctorLoginComponent}
+    ]},
 
-    
     {path: '**', component: NotfoundComponent}
     ];

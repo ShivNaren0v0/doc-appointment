@@ -1,0 +1,24 @@
+<main>
+    <nav>
+      <ul>
+        <li>
+      <a [routerLink]="['/doctor/']">
+        Home
+        </a>
+        </li>
+        <li>
+      <a [routerLink]="['/doctor/doctor-appointment']">
+        Appointments
+      </a>
+        </li>
+        <li>
+      <a [routerLink]="['/doctor/doctor-logout']">
+        Log out
+      </a>
+        </li>
+      </ul>
+    </nav>
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
