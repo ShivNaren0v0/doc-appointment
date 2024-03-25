@@ -3,7 +3,7 @@
     <h2 class="listing-heading">{{ appointment.date | date: 'dd-MMMM-yyyy' }}</h2>
     <p class="listing-location">Timing: {{ appointment.timing}}</p>
     <button (click)="confirmappointment()" class="booked">Confirm</button>
-    <button (click)="cancelappointment()" *ngIf="cancel == false" class="not-booked">Cancel</button>
+    <button (click)="cancelAppointment()" *ngIf="cancel == false" class="not-booked">Cancel</button>
     <p class="listing-location">{{ appointment.description }}</p>
   </section>
   

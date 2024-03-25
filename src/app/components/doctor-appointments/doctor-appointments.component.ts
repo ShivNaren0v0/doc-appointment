@@ -15,7 +15,7 @@ export class DoctorAppointmentsComponent {
   filteredAppointmentList: Appointment[] = [];
   doctorService = inject(DoctorService);
   constructor() {
-    this.doctorService.getAllappointments(1).subscribe(
+    this.doctorService.getAllappointments(Number(localStorage.getItem('token'))).subscribe(
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;

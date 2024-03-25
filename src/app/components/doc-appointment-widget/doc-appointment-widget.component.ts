@@ -31,7 +31,7 @@ confirmappointment():void {
   
 }
 cancelAppointment():void {
-  this.doctorService.cancelAppointment(this.appointment.id).subscribe(
+  this.doctorService.cancelAppointment(2).subscribe(
     (data)=>{console.log(data); 
     Swal.fire("Appointment cancelled");
     }
