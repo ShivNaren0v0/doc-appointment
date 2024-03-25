@@ -11,11 +11,11 @@ export class AdminSerService {
   constructor(private http: HttpClient) { }
 
   getDoctors(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8090/doctor');
+    return this.http.get<any[]>('http://localhost:8090/Doctor');
   }
 
   getDoctorById(id: string): Observable<any> {
-    return this.http.get<any>('http://localhost:8090/doctor/${id}');
+    return this.http.get<any>('http://localhost:8090/Doctor/${id}');
   }
 
   createDoctor(newDoctor: any): Observable<any> {
@@ -23,6 +23,6 @@ export class AdminSerService {
   }
 
   deleteDoctor(id: number): Observable<any> {
-    return this.http.delete<any>('http://localhost:8090/doctor/{id}');
+    return this.http.delete<any>('http://localhost:8090/Doctor/{id}');
   }
 }

@@ -11,6 +11,7 @@ import Swal  from 'sweetalert2';
   templateUrl: './appointmentwidget.component.html',
   styleUrl: './appointmentwidget.component.css'
 })
+
 export class AppointmentwidgetComponent {
   payment: boolean = false;
 @Input() appointment!: Appointment;

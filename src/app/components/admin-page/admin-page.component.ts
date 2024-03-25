@@ -13,6 +13,7 @@ import { AdminSerService } from '../../services/admin-ser.service';
   templateUrl: './admin-page.component.html',
   styleUrl: './admin-page.component.css'
 })
+
 export class AdminPageComponent implements OnInit {
   doctors: doc[] = [];
   newDoctor: any = { name: '', spec: '' };
