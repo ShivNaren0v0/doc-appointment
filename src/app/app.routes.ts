@@ -14,6 +14,7 @@ import { DoctorHomeComponent } from './components/doctor-home/doctor-home.compon
 import { DoctorAppointmentsComponent } from './components/doctor-appointments/doctor-appointments.component';
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
 import { authGuard } from './guard/auth.guard';
+import { authdGuard } from './guard/authd.guard';
 import path from 'path';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -29,7 +30,7 @@ export const routes: Routes = [
     ]},
     {path:'doctor',component:DoctorNavbarComponent,children:[
         {path:'',component:DoctorHomeComponent},
-        {path:'doctor-appointment',component:DoctorAppointmentsComponent},
+        {path:'doctor-appointment',component:DoctorAppointmentsComponent,canActivate:[authdGuard]},
         {path:'doctor-login',component:DoctorLoginComponent},
         {path:'doctor-logout', redirectTo: 'doctor-login', pathMatch: 'full'},
         {path:'doctor-login',component:DoctorLoginComponent}

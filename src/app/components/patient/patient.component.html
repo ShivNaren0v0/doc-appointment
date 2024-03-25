@@ -27,7 +27,7 @@
               </a>
                 </li>
         <li>
-      <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">
+      <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" [routerLink]="['/patient/login']">
         Log out
       </a>
         </li>
