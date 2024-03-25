@@ -15,8 +15,13 @@
     <input type="number" id="age" name="age" [(ngModel)]="patient.age" required><br>
     
     <label for="gender">Gender:</label>
-    <input type="text" id="gender" name="gender" [(ngModel)]="patient.gender" required><br>
-    
+    <select name="gender" class="gender" id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="trans gender">Trans Gender</option>
+      <option value="prefer not to say">Prefer Not to Say</option>
+    </select>
+    <br>
     <button (click)="registerPatient()" type="button">Register</button>
   </form>
 </div>
