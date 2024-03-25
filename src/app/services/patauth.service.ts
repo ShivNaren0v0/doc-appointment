@@ -18,10 +18,10 @@ export class PatauthService {
     return this.http.post<any>(this._loginUrl,logcred)
   }
   loggedIn(){
-    return !!localStorage.getItem('token')
+    return !!localStorage.getItem('pat')
   }
   logoutUser(){
-    localStorage.removeItem('token');
+    localStorage.removeItem('pat');
     this._router.navigate(['/patient'])
   }
 }

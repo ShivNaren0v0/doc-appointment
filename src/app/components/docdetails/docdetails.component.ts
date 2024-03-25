@@ -29,7 +29,7 @@ export class DocdetailsComponent {
       );
 
       this.appointment.doctorId = this.doctorId;
-      this.appointment.patientId = Number(localStorage.getItem('token'));
+      this.appointment.patientId = Number(localStorage.getItem('pat'));
       this.appointment.status = false;
       
   }

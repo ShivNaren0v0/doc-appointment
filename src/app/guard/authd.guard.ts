@@ -3,7 +3,7 @@ import { CanActivateFn,Router } from '@angular/router';
 
 export const authdGuard: CanActivateFn = (route, state) => {
   console.log("am inside authd guard.");
-  let usert = localStorage.getItem("token");
+  let usert = localStorage.getItem("doc");
   console.log(usert);
 
   if (usert != null) {

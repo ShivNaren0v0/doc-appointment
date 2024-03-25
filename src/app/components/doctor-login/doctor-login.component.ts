@@ -23,7 +23,7 @@ export class DoctorLoginComponent implements OnInit{
     this._auth.loginPat(this.logcred).subscribe(
       (response) => {
         console.log(response);
-        localStorage.setItem('token',response.docId);
+        localStorage.setItem('doc',response.docId);
         this._router.navigate(['/doctor']);
       },
       (error) => {
