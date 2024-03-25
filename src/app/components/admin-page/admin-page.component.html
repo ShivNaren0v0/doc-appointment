@@ -1,1 +1,15 @@
-<p>admin-page works!</p>
+<div>
+  <h2>Admin Panel - Manage Doctors</h2>
+  
+  <h3>Create Doctor:</h3>
+  <input type="text" placeholder="Name" [(ngModel)]="newDoctor.name">
+  <input type="text" placeholder="Specialty" [(ngModel)]="newDoctor.spec">
+  <button (click)="createDoctor()">Create Doctor</button>
+
+  <h3>All Doctors:</h3>
+  <ul>
+    <li *ngFor="let doctor of doctors">
+      {{ doctor.name }} - {{ doctor.spec }} 
+    </li>
+  </ul>
+</div>

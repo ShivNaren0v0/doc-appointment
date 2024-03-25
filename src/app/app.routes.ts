@@ -15,6 +15,7 @@ import { DoctorAppointmentsComponent } from './components/doctor-appointments/do
 import { DoctorLoginComponent } from './components/doctor-login/doctor-login.component';
 import { authGuard } from './guard/auth.guard';
 import { authdGuard } from './guard/authd.guard';
+import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import path from 'path';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
@@ -35,6 +36,7 @@ export const routes: Routes = [
         {path:'doctor-logout', redirectTo: 'doctor-login', pathMatch: 'full'},
         {path:'doctor-login',component:DoctorLoginComponent}
     ]},
+    {path:'admin',component:AdminPageComponent},
 
     {path: '**', component: NotfoundComponent}
     ];
