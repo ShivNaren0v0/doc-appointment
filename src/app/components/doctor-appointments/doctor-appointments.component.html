@@ -1,1 +1,11 @@
-<p>doctor-appointments works!</p>
+<section>
+    <form>
+      <input type="date" placeholder="Filter by date" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+    </form>
+  </section>
+
+<section class="results">
+  <p *ngIf="filteredAppointmentList.length == 0">No appointments found</p>
+    <app-doc-appointment-widget *ngFor="let appointment of filteredAppointmentList" [appointment]="appointment"></app-doc-appointment-widget>
+</section>

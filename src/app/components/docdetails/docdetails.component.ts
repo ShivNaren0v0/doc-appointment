@@ -6,6 +6,7 @@ import { FormControl, FormGroup, FormsModule, NgModel, ReactiveFormsModule } fro
 import { ActivatedRoute } from '@angular/router';
 import { PatientService } from '../../services/patient.service';
 import { Appointment } from '../../models/appointment';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-docdetails',
   standalone: true,
@@ -35,8 +36,11 @@ export class DocdetailsComponent {
 
   submitRequest():void{
     this.patientService.submitAppointmentRequest(this.appointment).subscribe(
-      (data) => this.appointment = data
+      (data) => {this.appointment = data;
+        Swal.fire('Appointment Request Submitted');
+        }
     );
+    
   }
 
   

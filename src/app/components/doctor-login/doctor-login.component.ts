@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +15,8 @@ import { DoctorService } from '../../services/doctor.service';
 })
 export class DoctorLoginComponent implements OnInit{
   logcred: doclog=new doclog();
-  constructor(private _auth:DoctorService,private _router:Router){}
+  _auth=inject(DoctorService);
+  constructor(private _router:Router){}
   ngOnInit(){
   }
   loginDoctor():void {
