@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
-import { PatauthService } from '../../services/patauth.service';
 import { RouterModule, RouterOutlet } from '@angular/router';
-
+import { DoctorService } from '../../services/doctor.service';
+import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-doctor-navbar',
   standalone: true,
-  imports: [RouterModule, RouterOutlet],
+  imports: [RouterModule,FormsModule, RouterOutlet,CommonModule,NgIf],
   templateUrl: './doctor-navbar.component.html',
   styleUrl: './doctor-navbar.component.css'
 })
 export class DoctorNavbarComponent {
-  constructor(private _authService:PatauthService){}
+  constructor(public _authService:DoctorService){}
 
 }

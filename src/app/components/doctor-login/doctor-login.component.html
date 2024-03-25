@@ -1,1 +1,14 @@
-<p>doctor-login works!</p>
+<div>
+    <h2>Doctor Login</h2>
+    <br>
+    <form>
+    
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="logcred.name" required><br>
+      
+      <label for="spec">Specialty:</label>
+      <input type="password" id="spec" name="spec" [(ngModel)]="logcred.spec" required><br>
+      
+      <button (click)="loginDoctor()" type="button">Login</button>
+    </form>
+  </div>

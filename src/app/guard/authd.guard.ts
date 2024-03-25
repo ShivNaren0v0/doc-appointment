@@ -1,9 +1,8 @@
 import { inject } from '@angular/core';
 import { CanActivateFn,Router } from '@angular/router';
-import { PatauthService } from '../services/patauth.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  console.log("am inside auth guard.");
+export const authdGuard: CanActivateFn = (route, state) => {
+  console.log("am inside authd guard.");
   let usert = localStorage.getItem("token");
   console.log(usert);
 
@@ -11,7 +10,7 @@ export const authGuard: CanActivateFn = (route, state) => {
       return true
   }
   else{
-    inject(Router).navigateByUrl("/patient/login");
+    inject(Router).navigateByUrl("/doctor/doctor-login");
   return false;
   }
 };

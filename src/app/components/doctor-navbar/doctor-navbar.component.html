@@ -12,7 +12,12 @@
       </a>
         </li>
         <li>
-      <a [routerLink]="['/doctor/doctor-logout']">
+          <a *ngIf="!_authService.loggedIn()" [routerLink]="['/doctor/doctor-login']">
+            Log In
+          </a>
+            </li>
+        <li>
+      <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">
         Log out
       </a>
         </li>
