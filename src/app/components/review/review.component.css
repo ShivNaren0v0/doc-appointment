@@ -4,13 +4,19 @@
     cursor: pointer;
   }
   .rating span {
+    color: gold;
     font-size: 2em;
     user-select: none;
   }
-  .rating span:hover,
-  .rating span:hover ~ span {
-    color: gold;
+  .rating span:hover ~ span,
+  .rating span:hover {
+    color: black;
   }
+
+  .rating span:hover{
+    color:gold;
+  }
+
   textarea {
     width: 100%;
     min-height: 100px;
