@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Appointment } from '../../models/appointment';
 import { CommonModule, NgIf } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { PatientService } from '../../services/patient.service';
 import Swal  from 'sweetalert2';
 @Component({
   selector: 'app-appointmentwidget',
@@ -14,12 +15,11 @@ import Swal  from 'sweetalert2';
 
 export class AppointmentwidgetComponent {
 @Input() appointment!: Appointment;
-
-
-performpayment():void {
-  Swal.fire('Payment Successful');
+patientService = inject(PatientService);
+performpayment(id?:number):void {
+  this.patientService.performPayment("UPI",id).subscribe(
+    ()=>{Swal.fire("Payment Successfull");},
+  )
 }
 
-
 }
-

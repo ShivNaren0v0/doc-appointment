@@ -7,6 +7,6 @@
   <button class="booked-not-payed" *ngIf="appointment.status === true && this.appointment.payment?.successful == false">Status: Booked Not Payed</button>
   <p class="listing-location">{{ appointment.description }}</p>
 
-  <button type="button" (click)="performpayment()" class="primary pay" *ngIf="appointment.status==true && this.appointment.payment?.successful == false">Perform Payment</button>
+  <button type="button" (click)="performpayment(appointment.id)" class="primary pay" *ngIf="appointment.status==true && this.appointment.payment?.successful == false">Perform Payment</button>
   <button type="button" [routerLink]="['/patient/review']" class="primary" *ngIf="appointment.status==true && this.appointment.payment?.successful == true">Review</button>
 </section>

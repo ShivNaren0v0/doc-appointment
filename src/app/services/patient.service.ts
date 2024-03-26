@@ -31,8 +31,8 @@ getAllAppointments(id: number): Observable<any> {
   return this.httpClient.get('http://localhost:8090/patient/get_appointments/'+id);
 }
 
-performPayment(): Observable<any> {
+performPayment(method?: string, id?: number): Observable<any> {
 
-  return this.httpClient.get('http://localhost:8090/patient/perform_payment');
+  return this.httpClient.post('http://localhost:8090/patient/perform_payment/'+id,method);
 }
 }
