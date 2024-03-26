@@ -22,7 +22,7 @@ export class PatientRegistrationComponent implements OnInit{
     console.log(this.patient)
     this._auth.registerPat(this.patient).subscribe(
       (response) => {
-        localStorage.setItem('pat',response.patientId);
+        localStorage.setItem('pat',JSON.stringify(response));
         console.log(response);
 
         this._router.navigate(['/patient']);
