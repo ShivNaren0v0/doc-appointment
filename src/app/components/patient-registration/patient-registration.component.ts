@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Patient } from '../../models/patient.model';
 import { HttpClientModule } from '@angular/common/http';
 import { PatauthService } from '../../services/patauth.service';
+
 @Component({
   selector: 'app-patient-registration',
   standalone: true,
