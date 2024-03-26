@@ -15,17 +15,12 @@ export class DoctorAppointmentsComponent {
   filteredAppointmentList: Appointment[] = [];
   doctorService = inject(DoctorService);
   constructor() {
-    let storedString = localStorage.getItem('doc');
-    if(storedString!=null){
-    let storedObject = JSON.parse(storedString);
-
-    this.doctorService.getAllappointments(Number(storedObject.docId)).subscribe(
+    this.doctorService.getAllappointments(Number(localStorage.getItem('doc'))).subscribe(
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;
       }
-
-    )}
+    )
   }
 
   filterResults(date: string) {
