@@ -5,6 +5,7 @@
     <span (click)="rate(4)">☆</span>
     <span (click)="rate(5)">☆</span>
   </div>
+  <p *ngIf="this.rating>0" class="rating">You have rated {{this.rating}} star(s) out of 5</p>
   <textarea [(ngModel)]="reviewText" placeholder="Write your review here..."></textarea>
   <button (click)="submitReview()">Submit</button>
   
