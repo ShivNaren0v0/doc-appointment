@@ -2,11 +2,11 @@
   <img class="listing-photo" src="assets/appointment.png" alt="Illustrative Image of Appointment">
   <h2 class="listing-heading">{{ appointment.date | date: 'dd-MMMM-yyyy' }}</h2>
   <p class="listing-location">Timing: {{ appointment.timing}}</p>
-  <button class="booked" *ngIf="appointment.status == true && this.payment == true">Status: Booked</button>
+  <button class="booked" *ngIf="appointment.status == true && this.appointment.payment?.successful == true">Status: Booked</button>
   <button class="not-booked" *ngIf="appointment.status == false">Status: Not Booked</button>
-  <button class="booked-not-payed" *ngIf="appointment.status === true && this.payment == false">Status: Booked Not Payed</button>
+  <button class="booked-not-payed" *ngIf="appointment.status === true && this.appointment.payment?.successful == false">Status: Booked Not Payed</button>
   <p class="listing-location">{{ appointment.description }}</p>
 
-  <button type="button" (click)="performpayment()" class="primary pay" *ngIf="appointment.status==true && this.payment == false">Perform Payment</button>
-  <button type="button" [routerLink]="['/patient/review']" class="primary" *ngIf="appointment.status==true && this.payment == true">Review</button>
+  <button type="button" (click)="performpayment()" class="primary pay" *ngIf="appointment.status==true && this.appointment.payment?.successful == false">Perform Payment</button>
+  <button type="button" [routerLink]="['/patient/review']" class="primary" *ngIf="appointment.status==true && this.appointment.payment?.successful == true">Review</button>
 </section>

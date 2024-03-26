@@ -13,12 +13,10 @@ import Swal  from 'sweetalert2';
 })
 
 export class AppointmentwidgetComponent {
-  payment: boolean = false;
 @Input() appointment!: Appointment;
 
 
 performpayment():void {
-  this.payment = true;
   Swal.fire('Payment Successful');
 }
 
