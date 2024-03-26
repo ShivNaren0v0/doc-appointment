@@ -27,7 +27,8 @@ export const routes: Routes = [
         { path: 'docdetails/:id', component: DocdetailsComponent ,canActivate:[authGuard]},
         {path: 'log-out', redirectTo: 'login', pathMatch: 'full'},
         {path: 'appointments', component: ViewAppointmentsComponent,canActivate:[authGuard]},
-        {path: 'login',component: PatientLoginComponent}
+        {path: 'login',component: PatientLoginComponent},
+        {path: 'review', component: ReviewComponent}
     ]},
     {path:'doctor',component:DoctorNavbarComponent,children:[
         {path:'',component:DoctorHomeComponent},
