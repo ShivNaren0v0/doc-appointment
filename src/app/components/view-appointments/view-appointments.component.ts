@@ -16,15 +16,21 @@ export class ViewAppointmentsComponent {
   appointmentList: Appointment[] = [];
   filteredAppointmentList: Appointment[] = [];
   patientService = inject(PatientService);
-patientId = Number(localStorage.getItem('pat'));
+  
   constructor() {
-    this.patientService.getAllAppointments(this.patientId).subscribe(
+    let storedString = localStorage.getItem('pat');
+  if(storedString!=null){
+  let storedObject = JSON.parse(storedString);
+  
+  let patientId = Number(storedObject.patientId);
+
+    this.patientService.getAllAppointments(patientId).subscribe(
       (data)=>{
         this.appointmentList = data;
         this.filteredAppointmentList = data;
       }
     )
-  }
+  }}
 
   filterResults(date: string) {
     try {
