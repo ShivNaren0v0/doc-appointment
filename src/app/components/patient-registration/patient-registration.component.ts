@@ -18,6 +18,7 @@ export class PatientRegistrationComponent implements OnInit{
   ngOnInit(){
   }
   registerPatient():void {
+    console.log(this.patient)
     this._auth.registerPat(this.patient).subscribe(
       (response) => {
         localStorage.setItem('pat',response.patientId);
@@ -27,7 +28,7 @@ export class PatientRegistrationComponent implements OnInit{
       },
       (error) => {
         console.error(error);
-        alert('Error registering patient');
+        alert('Your password must have more than 8 characters. Please contact administrator if problem persists');
       }
     );
   }

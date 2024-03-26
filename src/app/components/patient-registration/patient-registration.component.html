@@ -15,7 +15,7 @@
     <input type="number" id="age" name="age" [(ngModel)]="patient.age" required><br>
     
     <label for="gender">Gender:</label>
-    <select name="gender" class="gender" id="gender">
+    <select name="gender" class="gender" id="gender" [(ngModel)] = "patient.gender">
       <option value="male">Male</option>
       <option value="female">Female</option>
       <option value="trans gender">Trans Gender</option>

@@ -5,11 +5,13 @@
   <input type="text" placeholder="Name" [(ngModel)]="newDoctor.name">
   <input type="text" placeholder="Specialty" [(ngModel)]="newDoctor.spec">
   <button (click)="createDoctor()">Create Doctor</button>
-
+  <br>
+  <input type="number" placeholder="Doctor Id" [(ngModel)]="doctorId">
+  <button (click)="deleteDoctor(doctorId)">Delete Doctor</button>
   <h3>All Doctors:</h3>
   <ul>
     <li *ngFor="let doctor of doctors">
-      {{ doctor.name }} - {{ doctor.spec }} 
+      {{ doctor.name }} - {{ doctor.spec }}  -  {{doctor.docId}}
     </li>
   </ul>
 </div>

@@ -32,11 +32,12 @@ confirmappointment(id?:number):void {
   
 }
 cancelAppointment(id?:number):void {
-  console.log(this.confirmapmt.appointmentId)
+  console.log(id);
   this.doctorService.cancelAppointment(Number(id)).subscribe(
-    (data)=>{console.log(data); 
-    Swal.fire("Appointment cancelled");
-    }
+    (data)=> {    
+      Swal.fire("Appointment cancelled");
+    },
+    
   );
   this.cancel = true;
 }

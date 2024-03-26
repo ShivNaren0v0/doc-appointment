@@ -1,7 +1,8 @@
 export class Confirm {
     constructor(
     public appointmentId?:number,
-    public amount?:number){
+    public amount?:number
+    ){
 
     }
 }

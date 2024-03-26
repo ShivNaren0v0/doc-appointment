@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { NgFor } from '@angular/common';
 import { doc } from '../../models/doc.model';
 import { AdminSerService } from '../../services/admin-ser.service';
+import { Doctor } from '../../models/doctor';
 @Component({
   selector: 'app-admin-page',
   standalone: true,
@@ -15,7 +16,7 @@ import { AdminSerService } from '../../services/admin-ser.service';
 })
 
 export class AdminPageComponent implements OnInit {
-  doctors: doc[] = [];
+  doctors: Doctor[] = [];
   newDoctor: any = { name: '', spec: '' };
   doctorId=0
   constructor(private adminService: AdminSerService) { }

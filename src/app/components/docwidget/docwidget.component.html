@@ -1,6 +1,6 @@
 
 <section class="listing">
-    <img class="listing-photo" src="assets/{{doctor.name}}.jpg" alt="photo of {{doctor.name}}">
+    <img class="listing-photo" src="assets/doctor.jpg" alt="photo of {{doctor.name}}">
     <h2 class="listing-heading">{{ doctor.name}}</h2>
     <p class="listing-location">{{ doctor.spec}}, {{doctor.rating }}</p>
     <a [routerLink]="['/patient/docdetails/', doctor.docId]">Book Appointment</a>
