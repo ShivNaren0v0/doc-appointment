@@ -28,7 +28,7 @@ export class PatientRegistrationComponent implements OnInit{
       },
       (error) => {
         console.error(error);
-        alert('Your password must have more than 8 characters. Please contact administrator if problem persists');
+        alert('Either email already exists or your password does not have more than 8 characters or you have not filled all the details. Please contact administrator if problem persists');
       }
     );
   }
