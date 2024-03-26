@@ -29,11 +29,8 @@ export class DocdetailsComponent {
       );
 
       this.appointment.doctorId = this.doctorId;
-      let storedString = localStorage.getItem('pat');
-      if(storedString!=null){
-      let storedObject = JSON.parse(storedString);
-      this.appointment.patientId = Number(storedObject.patientId);
-      this.appointment.status = false;}
+      this.appointment.patientId = Number(localStorage.getItem('pat'));
+      this.appointment.status = false;
       
   }
 
