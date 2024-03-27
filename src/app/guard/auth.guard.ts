@@ -4,7 +4,7 @@ import { PatauthService } from '../services/patauth.service';
 
 export const authGuard: CanActivateFn = (route, state) => {
   console.log("am inside auth guard.");
-  let usert = localStorage.getItem("pat");
+  let usert = localStorage.getItem("patid");
   console.log(usert);
 
   if (usert != null) {

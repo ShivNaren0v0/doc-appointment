@@ -21,7 +21,8 @@ export class PatientLoginComponent  implements OnInit{
     this._auth.loginPat(this.logcred).subscribe(
       (response) => {
         console.log(response);
-        localStorage.setItem('pat',response.patientId);
+        localStorage.setItem('patid',response.patientId);
+        localStorage.setItem('patname',response.name);
         this._router.navigate(['/patient']);
       },
       (error) => {

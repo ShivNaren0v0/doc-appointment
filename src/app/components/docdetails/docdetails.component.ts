@@ -29,7 +29,7 @@ export class DocdetailsComponent {
       );
 
       this.appointment.doctorId = this.doctorId;
-      this.appointment.patientId = Number(localStorage.getItem('pat'));
+      this.appointment.patientId = Number(localStorage.getItem('patid'));
       this.appointment.status = false;
       
   }

@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './patient.component.css'
 })
 export class PatientComponent {
-  constructor(public _authService:PatauthService){}
+  username: string | null = null;
+  constructor(public _authService:PatauthService){
+    this.username = localStorage.getItem('patname');
+  }
 
 }

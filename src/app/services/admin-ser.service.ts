@@ -25,4 +25,6 @@ export class AdminSerService {
   deleteDoctor(id: number): Observable<any> {
     return this.http.delete<any>('http://localhost:8090/Doctor/{id}');
   }
+
+  
 }

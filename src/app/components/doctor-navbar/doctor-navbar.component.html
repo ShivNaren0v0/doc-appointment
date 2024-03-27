@@ -16,6 +16,11 @@
             Log In
           </a>
             </li>
+            
+            <li><a *ngIf="_authService.loggedIn()">
+              <span>{{ this.username }}</span></a>
+            </li>
+              
         <li>
       <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" [routerLink]="['/doctor/doctor-login']" >
         Log out

@@ -18,10 +18,11 @@ export class PatauthService {
     return this.http.post<any>(this._loginUrl,logcred)
   }
   loggedIn(){
-    return !!localStorage.getItem('pat')
+    return !!localStorage.getItem('patid')
   }
   logoutUser(){
-    localStorage.removeItem('pat');
+    localStorage.removeItem('patid');
+    localStorage.removeItem('patname');
     this._router.navigate(['/patient'])
   }
 }

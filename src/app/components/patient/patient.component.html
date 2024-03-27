@@ -12,6 +12,11 @@
       </a>
         </li>
         <li>
+          <a [routerLink]="['/patient/reviews']">
+            doc-reviews
+          </a>
+            </li>
+        <li>
       <a [routerLink]="['/patient/appointments']">
         Appointments
       </a>
@@ -25,6 +30,9 @@
               <a *ngIf="!_authService.loggedIn()" [routerLink]="['/patient/login']">
                 LogIn
               </a>
+                </li>
+                <li><a *ngIf="_authService.loggedIn()">
+                  <span>{{ this.username }}</span></a>
                 </li>
         <li>
       <a *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" [routerLink]="['/patient/login']">

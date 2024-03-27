@@ -12,6 +12,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './doctor-navbar.component.css'
 })
 export class DoctorNavbarComponent {
-  constructor(public _authService:DoctorService){}
+  username: string | null = null;
+  constructor(public _authService:DoctorService){
+    this.username = localStorage.getItem('docname');
+  }
+  
+  
 
 }
+

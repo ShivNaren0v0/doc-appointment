@@ -17,6 +17,7 @@ import { authGuard } from './guard/auth.guard';
 import { authdGuard } from './guard/authd.guard';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import path from 'path';
+import { DocReviewsComponent } from './components/doc-reviews/doc-reviews.component';
 export const routes: Routes = [
     {path: '', component: HomeComponent},
 
@@ -28,7 +29,8 @@ export const routes: Routes = [
         {path: 'log-out', redirectTo: 'login', pathMatch: 'full'},
         {path: 'appointments', component: ViewAppointmentsComponent,canActivate:[authGuard]},
         {path: 'login',component: PatientLoginComponent},
-        {path: 'review', component: ReviewComponent}
+        {path: 'review/:id', component: ReviewComponent,canActivate:[authGuard]},
+        {path:'reviews',component:DocReviewsComponent}
     ]},
     {path:'doctor',component:DoctorNavbarComponent,children:[
         {path:'',component:DoctorHomeComponent},

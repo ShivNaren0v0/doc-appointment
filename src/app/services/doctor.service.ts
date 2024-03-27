@@ -15,10 +15,11 @@ export class DoctorService {
     return this.http.post<any>(this._loginUrl,logcred)
   }
   loggedIn(){
-    return !!localStorage.getItem('doc')
+    return !!localStorage.getItem('docid')
   }
   logoutUser(){
-    localStorage.removeItem('doc');
+    localStorage.removeItem('docid');
+    localStorage.removeItem('docname');
     this._router.navigate(['/doctor'])
   }
 
