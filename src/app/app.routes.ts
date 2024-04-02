@@ -23,7 +23,7 @@ export const routes: Routes = [
 
     { path: 'patient', component: PatientComponent, children: [
         { path: '', component: PatientHomeComponent },
-        { path: 'patient-dashboard', component: PatientDashboardComponent,canActivate:[authGuard] },
+        { path: 'patient-dashboard', component: PatientDashboardComponent },
         { path: 'patient-registration', component: PatientRegistrationComponent },
         { path: 'docdetails/:id', component: DocdetailsComponent ,canActivate:[authGuard]},
         {path: 'log-out', redirectTo: 'login', pathMatch: 'full'},
